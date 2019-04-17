@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Jokes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div id="main">
+		<span id="setup"></span>
+		<br />
+		<span id="punch"></span>
+		<br />
+
+		<button onclick="newJoke('general')">Generate general</button>
+		<button onclick="newJoke('programming')">Generate programming</button></div>
+	<script type="text/javascript">
+		function newJoke(type) {
+			fetch("https://official-joke-api.appspot.com/jokes/" + type + "/random").then((resp) => resp.json()).then(function(data) {
+				console.log(data);
+				document.getElementById("punch").innerHTML = data[0].punchline;
+				document.getElementById("setup").innerHTML = data[0].setup;
+			});
+		}
+	</script>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+		body {
+			font-family: "Roboto", sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 90vh;
+			text-align: center;
+		}
+
+		#main {
+			margin: auto;
+		}
+
+		#punch {
+			color: #e74c3c;
+		}
+
+		#setup {
+			color: #3498db;
+		}
+
+		button {
+			margin-top: 10px;
+			background: none;
+			border: 1px solid #2980b9;
+			padding: 10px;
+			color: #34495e;
+		}
+	</style>
+</body>
+
+</html>
