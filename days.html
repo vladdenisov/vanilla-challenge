@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <span class="count"></span>
+    <span class="count">550 r.i.p <br /></span>
 
     <style type="text/css">
         body {
@@ -76,7 +76,7 @@
         const date_n = new Date();
         var Difference_In_Time = date_n.getTime() - date1.getTime();
         var Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
-        document.getElementsByClassName('count')[0].innerText = Difference_In_Days;
+        document.getElementsByClassName('count')[0].innerText += Difference_In_Days;
     </script>
 </body>
 
