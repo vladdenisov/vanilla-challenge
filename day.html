@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,900&display=swap&subset=cyrillic"
+        rel="stylesheet">
+</head>
+
+<body>
+    <span class="count"></span>
+
+    <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 64px;
+            text-align: center;
+            height: 100vh;
+            color: #74b9ff;
+            display: flex;
+            justify-content: center;
+            vertical-align: middle;
+
+        }
+
+        span {
+            display: block;
+            margin: auto;
+            animation: color-change 15s infinite;
+        }
+
+        @keyframes color-change {
+            0% {
+                color: #01a3a4;
+            }
+
+            10% {
+                color: #00cec9;
+            }
+
+            20% {
+                color: #00b894;
+            }
+
+            30% {
+                color: #48dbfb;
+            }
+
+            40% {
+                color: #0abde3
+            }
+
+            70% {
+                color: #00cec9;
+            }
+
+            60% {
+                color: #00b894;
+            }
+
+            50% {
+                color: #00d2d3;
+            }
+
+            100% {
+                color: #01a3a4;
+            }
+        }
+    </style>
+    <script>
+        const date1 = new Date('April 29, 2022 00:00:00');
+        const date_n = new Date();
+        var Difference_In_Time = date_n.getTime() - date1.getTime();
+        var Difference_In_Days = Math.floor(Difference_In_Time / (1000 * 3600 * 24));
+        document.getElementsByClassName('count')[0].innerText += Difference_In_Days;
+    </script>
+</body>
+
+</html>
